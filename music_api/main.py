@@ -14,13 +14,6 @@ path_data = os.getcwd() + "/music_api/dataset.csv"
 
 # Base de donnée pour les chansons
 df_songs = pd.read_csv(path_data, index_col=0)
-columns_to_keep = [
-    'artists', 'track_name', 'popularity',
-    'duration_ms', 'explicit', 'danceability', 'energy', 'key', 'loudness',
-    'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness',
-    'valence', 'tempo', 'time_signature']
-
-df_songs = df_songs[columns_to_keep]
 
 # Indicateur d'enregistrement de l'utilisateur
 user_registered = False
