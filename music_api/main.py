@@ -4,7 +4,6 @@ import uuid
 import boto3
 import pandas as pd
 from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from music_api.utils import find_similar_songs
@@ -27,15 +26,6 @@ user_registered = False
 
 
 app = FastAPI()
-
-# Configure CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Specify domains if you want to restrict
-    allow_credentials=True,
-    allow_methods=["*"],  # Or specify methods ["GET", "POST", etc.]
-    allow_headers=["*"],
-)
 
 
 class User(BaseModel):
