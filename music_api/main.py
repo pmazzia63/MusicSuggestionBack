@@ -23,7 +23,7 @@ columns_to_keep = [
 df_songs = df_songs[columns_to_keep]
 
 # Indicateur d'enregistrement de l'utilisateur
-user_registered = True
+user_registered = False
 
 
 app = FastAPI()
