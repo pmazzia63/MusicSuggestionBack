@@ -29,6 +29,11 @@ class User(BaseModel):
     age: int
 
 
+@app.get("/healthcheck/")
+async def healthcheck():
+    return {"body": "Server is running"}
+
+
 @app.post("/register/")
 async def register_user(user: User):
     global df_users, user_registered
