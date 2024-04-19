@@ -13,7 +13,7 @@ from music_api.utils import find_similar_songs
 path_data = os.getcwd() + "/music_api/dataset.csv"
 
 # Base de donnée pour les chansons
-df_songs = pd.read_csv(path_data, index_col=0)
+df_songs = pd.read_csv(path_data)
 
 # Indicateur d'enregistrement de l'utilisateur
 user_registered = False
