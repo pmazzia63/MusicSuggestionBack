@@ -1,0 +1,19 @@
+# Utiliser une image de base officielle Python
+FROM python:3.9-slim
+
+# Définir le répertoire de travail dans le conteneur
+WORKDIR /app
+
+# Copier les fichiers nécessaires dans le conteneur
+COPY ./requirements.txt ./requirements.txt
+COPY ./music_api ./music_api
+COPY ./setup.py ./setup.py
+
+# Installer les dépendances
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Exposer le port sur lequel l'API sera accessible
+EXPOSE 8000
+
+# Commande pour démarrer l'application
+CMD ["uvicorn", "music_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
