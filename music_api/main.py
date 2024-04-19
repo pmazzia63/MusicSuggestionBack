@@ -101,7 +101,7 @@ async def get_similar_songs(song: Song):
         raise HTTPException(status_code=403, detail="User not registered")
 
     result = find_similar_songs(df_songs, song.artist, song.track)
-
+    print(result)
     return result.to_dict()
 
 
